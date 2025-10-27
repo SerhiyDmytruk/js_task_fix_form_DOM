@@ -1,7 +1,7 @@
 'use strict';
 
 // write code here
-const inputs = Array.from(document.querySelectorAll('input'));
+const inputs = Array.from(document.querySelectorAll('form input'));
 
 inputs.map((input) => {
   const label = document.createElement('label');
