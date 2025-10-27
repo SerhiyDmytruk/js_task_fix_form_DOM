@@ -5,8 +5,14 @@ const inputs = Array.from(document.querySelectorAll('form input'));
 
 inputs.map((input) => {
   const label = document.createElement('label');
-  const nameAttr = input.getAttribute('name');
+  let nameAttr = input.getAttribute('name');
   const idAttr = input.getAttribute('id');
+
+  const idx = nameAttr.split('').indexOf('N');
+
+  if (idx > 0) {
+    nameAttr = nameAttr.substring(0, idx) + ' ' + nameAttr.substring(idx);
+  }
 
   label.setAttribute('class', 'field-label');
   label.setAttribute('for', idAttr);
